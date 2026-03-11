@@ -1,0 +1,228 @@
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --primary-color: #f44336;
+  --secondary-color: #2196f3;
+  --background-color: #f5f5f5;
+  --text-color: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+
+  .main-title {
+    font-size: 1rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .form-button {
+    display: block;
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--text-color);
+      background-color: var(--secondary-color);
+      transition: all 0.3s ease;
+    }
+  }
+
+  .modal {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(168, 168, 168, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+
+    .form-wrapper {
+      width: 400px;
+      height: 400px;
+      background-color: var(--background-color);
+      padding: 2rem;
+      border-radius: 5px;
+      position: relative;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .close-symbol {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.5rem;
+        color: var(--text-color);
+        cursor: pointer;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+          color: var(--primary-color);
+          transition: all 0.3s ease;
+        }
+      }
+
+      form {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .form-title {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .form-description {
+          display: flex;
+          flex-direction: column;
+        }
+
+        button {
+          padding: 0.5rem 1rem;
+          background-color: var(--primary-color);
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+
+          &:hover {
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+            transition: all 0.3s ease;
+          }
+        }
+      }
+    }
+  }
+
+  .boards {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+
+    .board {
+      width: 30%;
+      height: 30rem;
+      background-color: var(--background-color);
+      overflow: auto;
+      color: var(--text-color);
+
+      .board-title {
+        font-size: 1.5rem;
+        color: whitesmoke;
+        text-align: center;
+        padding: 1rem;
+        position: sticky;
+        top: 0;
+        left: 0;
+      }
+
+      .todo {
+        background-color: #507bcf;
+      }
+
+      .inprog {
+        background-color: #f0ad4e;
+      }
+
+      .done {
+        background-color: #5cb85c;
+      }
+
+      .card {
+        width: 90%;
+        background-color: white;
+        margin: 1rem auto;
+        /* padding: 0.5rem; */
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          transition: all 0.3s ease;
+        }
+
+        h3 {
+          color: white;
+          padding: 0.5rem;
+          border-radius: 5px 5px 0 0;
+
+          .todo {
+            background-color: #507bcf;
+          }
+
+          .inprog {
+            background-color: #f0ad4e;
+          }
+
+          .done {
+            background-color: #5cb85c;
+          }
+        }
+
+        p {
+          padding: 0.5rem;
+        }
+
+        .status-in-progress {
+          padding: 0.5rem 1rem;
+          background-color: #f0ad4e;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+
+        .status-done {
+          padding: 0.5rem 1rem;
+          background-color: #5cb85c;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+
+        .completed {
+          padding: 0.5rem 1rem;
+          background-color: var(--primary-color);
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+
+          &:hover {
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+            transition: all 0.3s ease;
+          }
+        }
+      }
+    }
+  }
+}
